@@ -1,0 +1,8 @@
+[project]
+name = "prompts-engineer-01-intro"
+version = "0.1.0"
+description = "Intro lab: call OpenAI with a simple get_response(prompt) helper"
+requires-python = ">=3.11"
+dependencies = [
+    "openai",
+]
