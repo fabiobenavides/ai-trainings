@@ -1,0 +1,8 @@
+[project]
+name = "prompts-engineer-02-langchain-xai"
+version = "0.1.0"
+description = "Lab: call xAI Grok via LangChain ChatXAI"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain-xai",
+]
