@@ -8,7 +8,7 @@ from client import get_response, require_api_key
 def main() -> None:
     require_api_key()
     prompt = """
-Plan beach vacations by following these steps in order. Respond in Spanish.
+Plan beach vacations by following these steps in order.
 
 Step 1 — Destinations:
 Propose exactly four possible beach destinations.

@@ -8,6 +8,7 @@ Minimal lab: a Python helper that sends a prompt to Grok via LangChain `ChatXAI`
   main.py          # hello demo
   books.py         # 10 Christian books (title, author, year)
   vacation.py      # multi-step beach vacation plan
+  ages_cot.py      # chain-of-thought age problem
   pyproject.toml
   .env.example
 ```
@@ -51,9 +52,10 @@ export XAI_API_KEY="xai-..."
 uv run python main.py
 uv run python books.py
 uv run python vacation.py
+uv run python ages_cot.py
 ```
 
-`client.get_response(prompt)` usa LangChain `ChatXAI` y lo reutilizan `main.py`, `books.py` y `vacation.py`.
+`client.get_response(prompt)` usa LangChain `ChatXAI` y lo reutilizan los scripts del lab.
 
 ### Si `uv` no se reconoce (Windows)
 
@@ -107,9 +109,10 @@ export XAI_API_KEY="xai-..."
 uv run python main.py
 uv run python books.py
 uv run python vacation.py
+uv run python ages_cot.py
 ```
 
-`client.get_response(prompt)` calls LangChain `ChatXAI` and is shared by `main.py`, `books.py`, and `vacation.py`.
+`client.get_response(prompt)` calls LangChain `ChatXAI` and is shared by the lab scripts.
 
 ### If `uv` is not recognized (Windows)
 
