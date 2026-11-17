@@ -4,7 +4,9 @@ Minimal lab: a Python helper that sends a prompt to Grok via LangChain `ChatXAI`
 
 ```text
 02-langchain-xai/
-  main.py          # get_response(prompt) + demo
+  client.py        # shared get_response(prompt)
+  main.py          # hello demo
+  books.py         # 10 Christian books (title, author, year)
   pyproject.toml
   .env.example
 ```
@@ -46,9 +48,10 @@ export XAI_API_KEY="xai-..."
 
 ```bash
 uv run python main.py
+uv run python books.py
 ```
 
-La función `get_response(prompt)` usa LangChain `ChatXAI` y devuelve el texto de la respuesta.
+`client.get_response(prompt)` usa LangChain `ChatXAI` y lo reutilizan `main.py` y `books.py`.
 
 ### Si `uv` no se reconoce (Windows)
 
@@ -100,9 +103,10 @@ export XAI_API_KEY="xai-..."
 
 ```bash
 uv run python main.py
+uv run python books.py
 ```
 
-`get_response(prompt)` calls LangChain `ChatXAI` and returns the reply text.
+`client.get_response(prompt)` calls LangChain `ChatXAI` and is shared by `main.py` and `books.py`.
 
 ### If `uv` is not recognized (Windows)
 
