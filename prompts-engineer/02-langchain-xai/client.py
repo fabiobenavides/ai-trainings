@@ -20,11 +20,14 @@ def require_api_key() -> None:
         raise SystemExit(1)
 
 
-def get_response(prompt: str) -> str:
-    """Call Grok through LangChain ChatXAI and return the reply text."""
+def get_response(prompt: str, temperature: float = 0) -> str:
+    """Call Grok through LangChain ChatXAI and return the reply text.
+
+    ``temperature`` defaults to 0 so existing lab scripts stay deterministic.
+    """
     llm = ChatXAI(
         model=os.getenv("LAB_MODEL", DEFAULT_MODEL),
-        temperature=0,
+        temperature=temperature,
     )
     message = llm.invoke(prompt)
     content = message.content
